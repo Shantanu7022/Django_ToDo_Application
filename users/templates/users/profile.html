@@ -1,0 +1,25 @@
+{% extends 'todo/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="mb-2">
+    <h2>Update Info</h2>
+    <!--
+        <p class="test-secondary">{{user.email}}</p>
+    -->
+</div>
+
+<form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group">
+    
+        {{ u_form | crispy }}
+
+    </fieldset>
+    <div class="form-group">
+        <button class="btn btn-outline-info" type="submit">
+            Update
+        </button>
+    </div>
+</form>
+
+{% endblock content %}
